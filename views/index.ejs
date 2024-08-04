@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createYourFile.Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            background-color:rgb(42, 39, 39);
+            background-image: url('img.png');
+            background-size: cover;
+   
+
+        }
+        
+        .me{
+            margin-top: 70px;
+        }
+          
+        .fi{
+            width: 400px;
+            
+            height: 100px;
+            padding: 5px;
+            margin-top: 30px;
+            margin-left: 500px;
+            font-size: 20px;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block;
+            
+               
+        }
+        @media screen and (max-width: 600px) {
+        .fi {
+          margin-left: 5px;
+          width: 340px;
+        }
+      }
+
+        .task{
+            display: inline-block;
+        }
+        .ab:hover{
+            
+            color: black;
+        }
+       
+        
+        
+    </style>
+</head>
+<body>
+   <div class="all">
+    <div class="forms text-white px-10">
+       <div class="a">
+        <form action="/create" method="post">
+            <input   class="block px-5 w-full rounded-md  py-2 bg-zinc-700 mt-10 " type="text" placeholder="Enter Name to Create File" name="title">
+            <textarea class="block mt-2 w-full px-5 rounded-md resize-none py-10 bg-zinc-700 "  placeholder="Write Information in File" name="info"></textarea>
+            <div class="ab"><input class="mt-2  p-1 rounded-md bg-blue-600" type="submit" value="create File"></div>
+        </form>
+    </div>
+    </div>
+    
+
+    <div class="tasks">
+        <% if(files.length > 0){ %>
+            <% files.forEach(function(val){ %>
+                <div class="tasks">
+                <div class="fi" style="background-color: rgb(186, 186, 213);">
+                    <h1 class="p-1" style="color:black; background-color: rgb(186, 186, 213) ;font-size: 30px; " > <%=val%></h1>
+                    <a href="/file/<%=val%>" style="color:rgb(187, 180, 180); background-color:rgb(77, 77, 116) ;border-radius: 2px;padding: 5px;margin-left: 10px;" > Read File.</a>
+                    <a style="color:rgb(187, 180, 180);font-size: 15px; background-color:rgb(77, 77, 116) ;border-radius: 2px;padding: 5px;margin-left: 10px;"  href="/edit/<%=val%>">Edit File Name.</a>
+                    <a style="color:rgb(187, 180, 180);font-size:15px; background-color:rgb(77, 77, 116) ;border-radius: 2px;padding: 5px;margin-left: 10px;"  href="/delete/<%=val%>">Delete File.</a>
+                </div>
+                </div>
+    </div>
+                    
+                </div>
+                </div>
+            </div>
+            <% }) %>
+        <% }else{%>
+        <div class="tasks">
+        <div class="fi p-1 style="color:rgb(39, 36, 36); background-color: rgb(186, 186, 213) ; "" style="background-color: rgb(186, 186, 213);">
+            No File yet.
+        </div>
+        </div>
+        <% } %>
+        
+        
+        
+        
+    
+
+    </div>
+
+   </div>
+</div>
+
+    
+</body>
+</html>

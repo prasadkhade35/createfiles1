@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        
+        *{
+            background-color: rgb(30, 31, 30);
+        }
+        .home{
+            color:blue;
+            margin-top:15px;
+            margin-left: 10px;
+        }
+         
+    </style>
+   
+</head>
+<body>
+    <div class="page">
+        <div class="home">
+        <a  href="/"> Go Back To Home</a>
+        </div>
+        
+        <form action="/edit" method="post">
+            <input   class="block px-5 w-1/2 rounded-md  py-2 bg-zinc-700 mt-2  " type="text" placeholder="Previous Name" name="prev" value="<%= filename%>">
+            <input   class="block px-5 w-1/2 rounded-md  py-2 bg-zinc-700 mt-2 " type="text" placeholder="New Name" name="new">
+            
+            <input class="mt-2  p-1 rounded-md bg-blue-600" type="submit" value="Edit Name">
+        </form>
+            
+            
+        
+        
+    </div>
+        
+
+
+
+    </div>
+    
+</body>
+</html>
